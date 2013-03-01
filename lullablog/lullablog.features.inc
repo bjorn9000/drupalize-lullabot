@@ -19,7 +19,7 @@ function lullablog_node_info() {
     'blog' => array(
       'name' => t('Blog'),
       'base' => 'node_content',
-      'description' => '',
+      'description' => t('Blog is a made up word that is both a verb and a noun.'),
       'has_title' => '1',
       'title_label' => t('Title'),
       'help' => '',
