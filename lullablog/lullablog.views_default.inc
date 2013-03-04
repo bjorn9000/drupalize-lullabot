@@ -22,7 +22,7 @@ function lullablog_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'lullablog';
+  $handler->display->display_options['title'] = 'All blogmessages';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'perm';
   $handler->display->display_options['cache']['type'] = 'none';
@@ -64,9 +64,13 @@ function lullablog_views_default_views() {
   $handler = $view->new_display('page', 'Page', 'page');
   $handler->display->display_options['defaults']['hide_admin_links'] = FALSE;
   $handler->display->display_options['path'] = 'blog';
+  $handler->display->display_options['menu']['type'] = 'normal';
+  $handler->display->display_options['menu']['title'] = 'lullablog';
+  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['context'] = 0;
   $translatables['lullablog'] = array(
     t('Master'),
-    t('lullablog'),
+    t('All blogmessages'),
     t('more'),
     t('Apply'),
     t('Reset'),
