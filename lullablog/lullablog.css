@@ -1,0 +1,21 @@
+/**
+ * CSS Styles for Lullabog feature.
+ */
+.node-blog h1#page-title{
+	font-size: 1.1em;
+	font-family: sans-serif;
+	margin: 1em 0;
+	text-transform: uppercase;
+}
+
+.node .field-type-image img{
+	float: right;
+	margin: 0em 0 1em 1em;
+}
+
+.node-lullablog .field-name-field-lullablog-entry-image img {
+	border: 2px solid #999;
+	float: right;
+	padding: 2px;
+	margin: 0 0 12px 12px;
+}

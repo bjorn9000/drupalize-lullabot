@@ -5,3 +5,52 @@
  */
 
 include_once 'lullablog.features.inc';
+
+/**
+ * implementents hook_init().
+ * 
+ */
+function lullablog_init() {
+  // add css for this feature :
+      drupal_add_css(drupal_get_path('module', 'lullablog') . '/lullablog.css');
+}
+
+
+/**
+ * implementents hook_permission().
+ * 
+ */
+ function lullablog_permission() {
+  return array(
+    'administer lullablog status' => array(
+      'title' => t('Administer blog post status'),
+      'description' => t('Edit the blog to published or unpublished, as an editor'),
+    ),
+  );
+}
+
+/**
+ * implementents hook_form_FORM_ID_alter().
+ * 
+ */
+
+function lullablog_form_blog_node_form_alter(&$form, &$form_state) {
+	dsm($form);
+
+  unset($form['options']['#group']);
+  if(user_access('administer lullablog status')){
+  	
+    $form['options']['#acccess'] = TRUE;
+  }
+}
+
+ /**
+ * Implements hook_form_alter().
+ * 
+ * We use it to get the display the form id on top of forms.
+ * 
+ * Remove after development 
+ * function lullablog_form_alter(&$form, &$form_state, $form_id) { 
+ * dsm($form_id);
+ * }
+ */  
